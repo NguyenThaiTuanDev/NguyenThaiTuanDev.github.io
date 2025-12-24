@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch sử phỏng vấn - Ngũ Hổ Tướng AI</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/history.css">
+</head>
+<body>
+
+    <div class="history-container">
+        
+        <aside class="sidebar">
+            <div class="logo-icon">NHT<span class="dot">.</span></div>
+            
+            <nav class="app-nav">
+                <a href="app.html" class="nav-item" title="Phỏng vấn">
+                    <i class="fas fa-comment-dots"></i>
+                </a>
+                <a href="history.html" class="nav-item active" title="Lịch sử">
+                    <i class="fas fa-history"></i>
+                </a>
+                <a href="dashboard.html" class="nav-item" title="Báo cáo">
+                    <i class="fas fa-chart-pie"></i>
+                </a>
+                <a href="index.html" class="nav-item logout-btn" title="Thoát">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </nav>
+
+            <div class="user-avatar-container">
+                <img id="sideAvatar" src="https://ui-avatars.com/api/?name=User&background=B936EE&color=fff&rounded=true" alt="User">
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="top-bar">
+                <div class="page-title">
+                    <h1>History</h1>
+                </div>
+
+                <div class="history-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Tìm kiếm phiên...">
+                    </div>
+                    <button class="btn-filter" title="Bộ lọc">
+                        <i class="fas fa-filter"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="history-list">
+                
+                <div class="history-card" onclick="window.location.href='dashboard.html'">
+                    <div class="card-left">
+                        <div class="role-icon ba">BA</div>
+                        <div class="info-text">
+                            <h3>Business Analyst - Senior Level</h3>
+                            <div class="meta-data">
+                                <span><i class="far fa-calendar-alt"></i> 24/12/2025</span>
+                                <span><i class="far fa-clock"></i> 25 phút</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <div class="score-box">
+                            <div class="score-val high">8.5</div>
+                            <div class="score-label">Excellent</div>
+                        </div>
+                        <button class="action-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="history-card">
+                    <div class="card-left">
+                        <div class="role-icon dev">SE</div>
+                        <div class="info-text">
+                            <h3>Software Engineer (ReactJS)</h3>
+                            <div class="meta-data">
+                                <span><i class="far fa-calendar-alt"></i> 22/12/2025</span>
+                                <span><i class="far fa-clock"></i> 18 phút</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <div class="score-box">
+                            <div class="score-val mid">6.5</div>
+                            <div class="score-label">Average</div>
+                        </div>
+                        <button class="action-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="history-card">
+                    <div class="card-left">
+                        <div class="role-icon qa">QA</div>  
+                        <div class="info-text">
+                            <h3>Quality Assurance (Manual)</h3>
+                            <div class="meta-data">
+                                <span><i class="far fa-calendar-alt"></i> 20/12/2025</span>
+                                <span><i class="far fa-clock"></i> 12 phút</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <div class="score-box">
+                            <div class="score-val low">4.0</div>
+                            <div class="score-label">Poor</div>
+                        </div>
+                        <button class="action-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                 <div class="history-card">
+                    <div class="card-left">
+                        <div class="role-icon" style="background: rgba(255, 159, 10, 0.1); color: #FF9F0A; border: 1px solid rgba(255, 159, 10, 0.2);">MKT</div>
+                        <div class="info-text">
+                            <h3>Digital Marketing Manager</h3>
+                            <div class="meta-data">
+                                <span><i class="far fa-calendar-alt"></i> 15/12/2025</span>
+                                <span><i class="far fa-clock"></i> 30 phút</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <div class="score-box">
+                            <div class="score-val high">9.0</div>
+                            <div class="score-label">Perfect</div>
+                        </div>
+                        <button class="action-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+/* =========================================
+   1. VARIABLES (CHUẨN THEO APP/DASHBOARD)
+   ========================================= */
+:root {
+    --bg-dark: #05050A;
+    --panel-bg: #10101A;
+    --border-color: rgba(255,255,255,0.08);
+    --primary: #B936EE;
+    --secondary: #48CAE4;
+    --text-main: #FFF;
+    --text-sub: #A0A0B0;
+    --success: #34C759;
+    --warning: #FF9F0A;
+    --danger: #FF3B30;
+    
+    --gradient: linear-gradient(135deg, var(--secondary), var(--primary));
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.history-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* =========================================
+   2. SIDEBAR (ĐÃ ĐỒNG BỘ)
+   ========================================= */
+.sidebar {
+    width: 80px; /* Chuẩn 80px */
+    background: #080810;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    flex-shrink: 0;
+    z-index: 20;
+}
+
+.logo-icon {
+    font-weight: 700; /* Đậm vừa phải (đồng bộ với App) */
+    font-size: 1.4rem;
+    margin-bottom: 50px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.logo-icon .dot { color: var(--secondary); }
+
+.app-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+}
+
+.app-nav a {
+    color: var(--text-sub);
+    font-size: 1.3rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.app-nav a:hover, .app-nav a.active {
+    background: rgba(185, 54, 238, 0.15);
+    color: var(--primary);
+    box-shadow: 0 0 15px rgba(185, 54, 238, 0.2);
+}
+
+.logout-btn { margin-top: auto; }
+
+.user-avatar-container {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.user-avatar-container img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--secondary);
+    object-fit: cover;
+}
+
+/* =========================================
+   3. MAIN CONTENT (HISTORY)
+   ========================================= */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background: var(--bg-dark);
+}
+
+/* Top Bar */
+.top-bar {
+    min-height: 80px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(16, 16, 26, 1) 0%, rgba(5, 5, 10, 0) 100%);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+}
+
+.page-title h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #FFFFFF, #A0A0B0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Search & Filter Actions */
+.history-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.search-box {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    padding: 10px 15px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 250px;
+    transition: 0.3s;
+}
+.search-box:focus-within {
+    border-color: var(--secondary);
+    box-shadow: 0 0 10px rgba(72, 202, 228, 0.2);
+}
+.search-box i { color: var(--text-sub); }
+.search-box input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+    width: 100%;
+    font-family: inherit;
+}
+
+.btn-filter {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-sub);
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: 0.3s;
+}
+.btn-filter:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(185, 54, 238, 0.1);
+}
+
+/* =========================================
+   4. HISTORY LIST
+   ========================================= */
+.history-list {
+    padding: 20px 40px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Card Style */
+.history-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.history-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(72, 202, 228, 0.3);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Card Left: Icon + Info */
+.card-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.role-icon {
+    width: 50px; height: 50px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1rem;
+}
+/* Màu riêng cho từng role */
+.ba { background: #1f1f1f; color: var(--primary); border: 1px solid rgba(185, 54, 238, 0.2); }
+.dev { background: #1a1a2e; color: var(--secondary); border: 1px solid rgba(72, 202, 228, 0.2); }
+.qa { background: rgba(52, 199, 89, 0.1); color: var(--success); border: 1px solid rgba(52, 199, 89, 0.2); }
+
+.info-text h3 { margin: 0 0 5px 0; font-size: 1.1rem; color: #fff; }
+.meta-data { display: flex; gap: 15px; font-size: 0.85rem; color: var(--text-sub); }
+.meta-data span i { margin-right: 5px; font-size: 0.8rem; }
+
+/* Card Right: Score + Action */
+.card-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.score-box { text-align: right; }
+.score-val { font-size: 1.4rem; font-weight: 700; line-height: 1; }
+.score-label { font-size: 0.75rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Màu điểm số */
+.high { color: var(--success); }
+.mid { color: var(--warning); }
+.low { color: var(--danger); }
+
+.action-btn {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-sub);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: 0.3s;
+}
+.action-btn:hover {
+    background: var(--text-main);
+    color: var(--bg-dark);
+}
+
+/* =========================================
+   5. RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+    .history-container { flex-direction: column; height: auto; overflow: auto; }
+    .sidebar { display: none; }
+    
+    .top-bar { flex-direction: column; align-items: flex-start; gap: 15px; padding: 20px; height: auto; }
+    .history-actions { width: 100%; }
+    .search-box { width: 100%; }
+    
+    .history-list { padding: 20px; }
+    .history-card { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .card-right { width: 100%; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 15px; }
+}
